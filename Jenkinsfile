@@ -11,7 +11,16 @@ environment {
     stages {
         stage ('build') {
             steps {
-                sh 'mvn clean deploy'
+                echo '------------------- Build Started -------------'
+                sh 'mvn clean deploy -Dmaven.test.skip=true'
+                echo '------------------- Build Completed -------------'
+            }
+        }
+        stage('Unit Test') {
+            steps{
+                echo '------------------- Unit Test Started -------------'
+                sh 'mvn surefire-report:report'
+                echo '------------------- Unit Test Completed -------------'
             }
         }
     
@@ -20,9 +29,11 @@ environment {
         scannerHome = tool 'SonarScanner'
         }
     steps{
+         echo '------------------- Sonar Started -------------'
     withSonarQubeEnv('SonarQube-Server') { // If you have configured more than one global server connection, you can specify its name
       sh "${scannerHome}/bin/sonar-scanner"
     }
+    echo '------------------- Sonar Analysis Completed -------------'
     }
   }
 }
