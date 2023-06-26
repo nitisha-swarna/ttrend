@@ -1,4 +1,4 @@
-package com.java.com.valaxy.demo;
+package com.stalin.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
