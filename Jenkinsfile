@@ -101,7 +101,7 @@ environment {
     stage ("deployment"){
         steps {
             script {
-                sh 'helm install ttrend-v3  ttrend-0.1.0/ttrend/templates'
+                sh 'helm install ttrend-v3  ttrend'
             }
         }
     }
