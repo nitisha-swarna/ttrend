@@ -32,12 +32,12 @@ public class RepositoryDetailsController {
 
 	@RequestMapping("/")
 	public String getRepos() throws IOException {
-		GitHub github = new GitHubBuilder().withPassword("valaxytech@gmail.com", "XXXXXXXX").build();
+		GitHub github = new GitHubBuilder().withPassword("nitisha.swarna@gmail.com", "XXXXXXXX").build();
 		GHRepositorySearchBuilder builder = github.searchRepositories();
-		return "Greetings from Valaxy Technologies. this is java based application";
+		return "Greetings from Valaxy Technologies this is java based application";
 	}
 
-	
+
 	@GetMapping("/trends")
 	public Map<String, String> getTwitterTrends(@RequestParam("placeid") String trendPlace, @RequestParam("count") String trendCount) {
 		String consumerKey = env.getProperty("CONSUMER_KEY");
