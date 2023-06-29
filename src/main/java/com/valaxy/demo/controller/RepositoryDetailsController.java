@@ -37,6 +37,7 @@ public class RepositoryDetailsController {
 		return "Greetings from Valaxy Technologies. this is java based application";
 	}
 
+	
 	@GetMapping("/trends")
 	public Map<String, String> getTwitterTrends(@RequestParam("placeid") String trendPlace, @RequestParam("count") String trendCount) {
 		String consumerKey = env.getProperty("CONSUMER_KEY");
