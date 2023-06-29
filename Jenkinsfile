@@ -101,7 +101,7 @@ environment {
     stage ("deployment"){
         steps {
             script {
-                sh 'helm install ttrend-v3  /home/ubuntu/ttrend-0.1.0.tgz'
+                sh 'helm install project-v4 project-0.1.0.tgz'
             }
         }
     }
